@@ -37,54 +37,55 @@ document.addEventListener("DOMContentLoaded", function() {
     const leftArrow = document.querySelector('.pagination .page-arrow i.fa-chevron-left:not(.fa-rotate-180)');
     const rightArrow = document.querySelector('.pagination .page-arrow i.fa-rotate-180');
     const pageNumbers = document.querySelectorAll('.pagination .page-number, .pagination .page-number-active');
-    const ellipsis = document.querySelector('.pagination .ellipsis');
-    let showHiddenPages = false; // Variabel för att spåra om de dolda sidnumren visas eller inte
+    const articles = document.querySelectorAll('.article-card');
+    const articlesPerPage = 3; // Antal artiklar per sida
+    let currentPage = 1; // Starta på sida 1
+
+    function updateArticlesVisibility() {
+        articles.forEach((article, index) => {
+            if (index >= (currentPage - 1) * articlesPerPage && index < currentPage * articlesPerPage) {
+                article.style.display = 'block';
+            } else {
+                article.style.display = 'none';
+            }
+        });
+    }
+    function updateActivePageIndicator() {
+        // Ta bort den aktiva klassen från alla sidnummer
+        pageNumbers.forEach(page => {
+            page.classList.remove('page-number-active');
+            page.classList.add('page-number');
+        });
+    
+        // Lägg till den aktiva klassen till det aktuella sidnumret
+        const activePage = document.querySelector(`.pagination .page-number[data-page="${currentPage}"], .pagination .page-number-active[data-page="${currentPage}"]`);
+        if (activePage) {
+            activePage.classList.remove('page-number');
+            activePage.classList.add('page-number-active');
+        }
+    }
+
+    function updatePaginationButtons() {
+        const maxPage = Math.ceil(articles.length / articlesPerPage);
+        leftArrow.parentElement.style.visibility = currentPage === 1 ? 'hidden' : 'visible';
+        rightArrow.parentElement.style.visibility = currentPage === maxPage ? 'hidden' : 'visible';
+    }
 
     function switchPage(targetPageNumber) {
-        const activePage = document.querySelector('.pagination .page-number-active');
-        
-        // Dölj alla sidnummer först
-        pageNumbers.forEach(page => {
-            page.style.display = 'none';
-        });
-
-        // Visa de 7 sidnumren baserat på det aktuella sidnumret
-        for (let i = targetPageNumber - 3; i <= targetPageNumber + 3; i++) {
-            const page = document.querySelector(`.pagination .page-number[data-page="${i}"], .pagination .page-number-active[data-page="${i}"]`);
-            if (page) {
-                page.style.display = 'inline-block';
-            }
-        }
-
-        // Visa eller dölj ellipsis baserat på det aktuella sidnumret
-        if (targetPageNumber <= 4) {
-            ellipsis.style.display = 'inline-block';
-        } else if (targetPageNumber >= 6) {
-            ellipsis.style.display = 'inline-block';
-        } else {
-            ellipsis.style.display = 'none';
-        }
-
-        const targetPage = document.querySelector(`.pagination .page-number[data-page="${targetPageNumber}"], .pagination .page-number-active[data-page="${targetPageNumber}"]`);
-        
-        if (targetPage) {
-            activePage.classList.remove('page-number-active');
-            activePage.classList.add('page-number');
-            targetPage.classList.remove('page-number');
-            targetPage.classList.add('page-number-active');
-        }
+        currentPage = targetPageNumber;
+        updateArticlesVisibility();
+        updatePaginationButtons();
+        updateActivePageIndicator(); // Lägg till denna rad
     }
 
     rightArrow.parentElement.addEventListener('click', function(event) {
         event.preventDefault();
-        const activePageNumber = parseInt(document.querySelector('.pagination .page-number-active').getAttribute('data-page'));
-        switchPage(activePageNumber + 1);
+        switchPage(currentPage + 1);
     });
 
     leftArrow.parentElement.addEventListener('click', function(event) {
         event.preventDefault();
-        const activePageNumber = parseInt(document.querySelector('.pagination .page-number-active').getAttribute('data-page'));
-        switchPage(activePageNumber - 1);
+        switchPage(currentPage - 1);
     });
 
     pageNumbers.forEach(function(page) {
@@ -95,20 +96,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    // Händelselyssnare för ellipsis
-    ellipsis.addEventListener('click', function(event) {
-        event.preventDefault();
-        showHiddenPages = !showHiddenPages; // Växla mellan att visa/dölja de dolda sidnumren
-        if (showHiddenPages) {
-            // Visa alla sidnummer
-            pageNumbers.forEach(page => {
-                page.style.display = 'inline-block';
-            });
-            ellipsis.style.display = 'none';
-        } else {
-            // Uppdatera sidnumren baserat på det aktuella sidnumret
-            const activePageNumber = parseInt(document.querySelector('.pagination .page-number-active').getAttribute('data-page'));
-            switchPage(activePageNumber);
-        }
-    });
+    // Initial setup
+    updateArticlesVisibility();
+    updatePaginationButtons();
 });
