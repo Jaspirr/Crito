@@ -711,7 +711,7 @@ button {
   margin-top: 40px;
 }
 
-.dot {
+.member-dot {
   width: 10px;
   height: 10px;
   background-color: rgba(128, 128, 128, 0.6);
@@ -723,7 +723,7 @@ button {
   box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.1); /* Lägg till skugga */
 }
 
-.dot.active {
+.member-dot.active {
   background-color: black;
 }
 
@@ -823,6 +823,8 @@ button {
   max-width: 1300px;
   margin: 0 auto;
   padding: 0 20px;
+  height: 500px; /* Justera detta värde efter behov */
+  overflow: hidden;
 }
 
 .header-wrapper {

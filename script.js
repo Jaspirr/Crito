@@ -1,56 +1,66 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const dots = document.querySelectorAll('.dot');
-    const cards = document.querySelectorAll('.member-card');
-    
-    // Function to remove active and zoomed classes from all dots and cards
-    const resetAll = () => {
-      dots.forEach(d => d.classList.remove('active'));
-      cards.forEach(c => c.classList.remove('zoomed'));
-    };
-  
-    // Click event for dots
-    dots.forEach((dot, index) => {
-      dot.addEventListener('click', function() {
-        resetAll();
-        this.classList.add('active');
-        const card = document.getElementById(`card${index + 1}`);
-        if (card) {
-          card.classList.add('zoomed');
-        }
-      });
+const memberDots = document.querySelectorAll('.member-dot');
+const memberCards = document.querySelectorAll('.member-card');
+
+// Funktion för att återställa alla medlemskort och punkter till deras ursprungliga tillstånd
+function resetMembers() {
+    memberCards.forEach(card => {
+        card.style.transform = 'scale(1)';
     });
-  
-    // Click event for cards
-    cards.forEach((card, index) => {
-      card.addEventListener('click', function() {
-        resetAll();
-        this.classList.add('zoomed');
-        const dot = document.getElementById(`dot${index + 1}`);
-        if (dot) {
-          dot.classList.add('active');
-        }
-      });
+    memberDots.forEach(dot => {
+        dot.style.backgroundColor = '#bbb';
     });
-  });
+}
 
-  document.addEventListener('DOMContentLoaded', function() {
-    let dots = document.querySelectorAll('.dot');
-    let articles = document.querySelectorAll('.article');
+// Hantera klickhändelser på medlemspunkter
+memberDots.forEach((dot, index) => {
+    dot.addEventListener('click', function() {
+        resetMembers(); // Återställ alla medlemskort och punkter
 
-    dots.forEach(dot => {
-        dot.addEventListener('click', function() {
-            let dotNumber = this.getAttribute('data-dot');
+        // Zooma in det valda medlemskortet
+        memberCards[index].style.transform = 'scale(1.1)';
 
-            articles.forEach(article => {
-                if (article.getAttribute('data-article') === dotNumber) {
-                    article.style.display = 'block';
-                } else {
-                    article.style.display = 'none';
-                }
-            });
-        });
+        // Ändra bakgrundsfärgen på den valda punkten
+        this.style.backgroundColor = '#717171';
     });
 });
+
+// Hantera klickhändelser på medlemskort
+memberCards.forEach((card, index) => {
+    card.addEventListener('click', function() {
+        resetMembers(); // Återställ alla medlemskort och punkter
+
+        // Zooma in det valda medlemskortet
+        this.style.transform = 'scale(1.1)';
+
+        // Ändra bakgrundsfärgen på den motsvarande punkten
+        memberDots[index].style.backgroundColor = '#717171';
+    });
+});
+
+const articles = document.querySelectorAll('.articles-section .article');
+const articleDots = document.querySelectorAll('.articles-section .dot');
+
+function showPage(pageNumber) {
+    articles.forEach(article => {
+        if (article.getAttribute('data-page') === pageNumber) {
+            article.style.display = 'block';
+        } else {
+            article.style.display = 'none';
+        }
+    });
+}
+
+articleDots.forEach(dot => {
+    dot.addEventListener('click', function() {
+        const pageNumber = this.getAttribute('data-page');
+        showPage(pageNumber);
+    });
+});
+
+// Visa den första sidan när sidan laddas
+window.onload = function() {
+    showPage('1');
+}
 
   document.addEventListener('DOMContentLoaded', function() {
     const leftArrow = document.querySelector('.pagination .page-arrow i.fa-chevron-left:not(.fa-rotate-180)');

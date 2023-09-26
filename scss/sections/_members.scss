@@ -71,7 +71,7 @@
     margin-top: 40px;
   }
   
-  .dot {
+  .member-dot {
     width: 10px;
     height: 10px;
     background-color: rgba(128, 128, 128, 0.6); 
@@ -83,7 +83,7 @@
     box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.1);  /* Lägg till skugga */
   }
   
-  .dot.active {
+  .member-dot.active {
     background-color: black;
   }
   
