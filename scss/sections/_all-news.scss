@@ -1,0 +1,90 @@
+.all-news {
+    background-color: white; /* Eller den färg som matchar din design */
+    padding: 20px;
+    text-align: center;
+  }
+  
+  
+  .all-news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tre kolumner */
+    gap: 20px; /* Mellanrum mellan artiklarna */
+  }
+  
+  .all-news-title {
+    color: black;
+    grid-column: span 3; /* Tar upp hela bredden */
+    font-size: 34px;
+    margin-bottom: 20px;
+    margin-left: 50px;
+    text-align: left;
+  }
+  
+  
+  .article-card img {
+    width: 100%;
+    height: 300px; /* Sätt en fast höjd här */
+    object-fit: cover;
+  }
+  
+  .article-title {
+    font-size: 24px;
+    text-align: left;
+  }
+  .placeholder-text {
+    font-size: 14px;
+    color: black;
+    text-align: left;
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .page-number, .page-arrow {
+    background-color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    border: 1px solid rgb(211, 210, 210);
+    color: #000;
+    font-size: 16px;
+  }
+  
+  
+  .ellipsis {
+    font-size: 16px;
+    color: #000;
+    border: 1px solid rgb(211, 210, 210);
+    padding: 10px 15px;
+    border-radius: 5px;
+  }
+
+  .page-number-active {
+    background-color: black;
+    text-decoration: none;
+    line-height: 2.6;
+    width: 40px;
+    height: 45px; /* Lägg till en fast höjd */
+    text-align: center;
+    border-radius: 20%;
+    color: white;
+    font-weight: bold;
+    display: flex; /* Lägg till flexbox */
+    align-items: center; /* Centrera innehållet vertikalt */
+    justify-content: center; /* Centrera innehållet horisontellt */
+    margin: 0;
+    padding: 0;
+  }
+  .page-number[data-page="4"],
+  .page-number[data-page="5"],
+  .page-number[data-page="6"],
+  .page-number[data-page="7"],
+  .page-number[data-page="8"] {
+      display: none;
+  }
+   
+  

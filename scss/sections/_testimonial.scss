@@ -1,0 +1,86 @@
+.testimonial-section {
+    background-color: #F0D082;
+    padding: 20px;
+    text-align: center;
+
+  }
+  
+  .testi-container-white{
+    background-color: white;
+    max-width: 1300px;
+    margin: auto;
+    padding-top: 100px;
+    padding-bottom: 80px;
+
+  }
+  .testi-titel {
+    display: flex;
+    flex-direction: column;
+    text-align: center; 
+    align-items: center;
+
+  }
+  .testi-card-container {
+    margin-bottom: 50px;
+    margin-top: 40px;
+    display: flex;  /* Använder Flexbox */
+    justify-content: space-evenly;  /* Distribuerar korten jämnt */
+    flex-wrap: wrap;  /* Tillåter korten att brytas till nästa rad om det inte finns tillräckligt med utrymme */
+  }
+  
+  .testi-card {
+    max-width: 300px;
+    padding: 20px;
+    width: calc(33.33% - 20px);  /* Bredd för varje kort, med lite utrymme för mellanrum */
+    box-sizing: border-box;  /* Inkluderar padding och border i elementets totala bredd och höjd */
+  }
+ 
+  
+  .rating {
+    
+    text-align: left;  /* Flyttar stjärnorna till vänster */
+
+  }
+  .star {
+    font-size: 16px;
+    color: rgb(255, 166, 0);
+    text-align: left;  /* Flyttar stjärnorna till vänster */
+
+  }
+  
+  .testi-description {
+    font-size: 14px;
+    font-weight: 300;
+    margin: 10px 0;
+    text-align: left;
+  }
+  
+  .profile {
+    display: flex;
+    align-items: center;
+  }
+  
+  .profile-pic {
+    border-radius: 50%;  /* Gör bilden rund */
+    width: 50px;         /* Bredd av bilden */
+    height: 50px;        /* Höjd av bilden */
+    object-fit: cover;   /* Beskär bilden för att passa in i elementet */
+  }
+  
+  .profile-info {
+    margin-left: 10px;
+  }
+  
+  .name {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+    text-align: left;
+  }
+  
+  .job-title {
+    font-size: 14px;
+    margin: 0;
+    text-align: left;
+    color: red;
+  }

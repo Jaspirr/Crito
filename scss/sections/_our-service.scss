@@ -1,0 +1,92 @@
+.our-services {
+  text-align: left;
+  background-color: #F0EFE9;
+  margin-top: 100px;
+
+  .our-services-container {
+    display: flex;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .section-subtitle {
+    color: red;
+    font-size: 18px;
+    margin-top: 100px;
+  }
+
+  h2 {
+    max-width: 300px;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  .service-cards {
+   
+    .umb-block-list { 
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      width: 100%;
+
+      .service-card {
+        flex: none;
+        width: 300px;
+        height: 330px;
+        position: relative;
+        background-color: white;
+        padding: 20px;
+        box-sizing: border-box;
+        margin-bottom: 20px;
+    
+        &:hover {
+          background-color: #F9D783;
+        }
+    
+        .corner-border {
+          position: absolute;
+          top: 50px;
+          left: 30px;
+          width: 12%;
+          height: 2px;
+          background-color: black;
+        }
+    
+        h3 {
+          font-size: 22px;
+          margin-top: 80px;
+          margin-left: 10px;
+        }
+    
+        .card-subtitle {
+          font-size: 16px;
+          font-weight: 100;
+          margin-top: 10px;
+          margin-left: 10px;
+        }
+    
+        .icon-button {
+          position: absolute;
+          right: 10px;
+          top: 10px;
+          border-radius: 50%;
+          width: 40px;
+          height: 40px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    
+      .our-services-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}

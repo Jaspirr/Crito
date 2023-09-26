@@ -1,0 +1,44 @@
+.features {
+  padding: 60px 0;
+
+  .section-border {
+    margin: -50px -90px;
+    padding: 80px 80px;
+    border: 1px solid rgba(25, 25, 25, 0.1);
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0px;
+
+      .feature-text {
+        margin-right: 30%;
+        .btn-theme-wide {
+          display: flex;
+        }
+      }
+
+      .feature-cards {
+        .umb-block-list {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 50px;
+
+          .feature-card {
+            max-width: 150px;
+            h3 {
+              margin-top: 10px;
+              font-size: 18px;
+              margin-bottom: 10px;
+            }
+
+            p {
+              font-size: 11px;
+              margin-bottom: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

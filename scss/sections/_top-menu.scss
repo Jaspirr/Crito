@@ -1,0 +1,86 @@
+
+.top-menu {
+  background-color: #F0EFE9;
+  padding: 10px 0;
+}
+
+.main-row {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.logotype {
+  max-width: 200px;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
+.grid-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #ddd;  /* kantlinje endast för .top-row */
+}
+
+.bottom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.info span i {
+  margin-right: 8px;
+}
+.info span {
+  display: inline-block;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  border-right: 1px solid #ddd;  /* Lägger till en kantlinje på höger sida */
+  padding-right: 10px;  /* Lite extra utrymme mellan text och kantlinje */
+}
+
+.info span:last-child {
+  border-right: none;  /* Tar bort kantlinjen för det sista span-elementet */
+}
+
+.social-media a {
+  margin-right: 10px;
+  font-size: 20px;
+  color: black;
+}
+
+.navbar a {
+  margin-right: 30px; /* ändrat för att lägga till extra marginal */
+  text-decoration: none;
+  color: black;
+  transition: color 0.3s;
+  position: relative;
+}
+
+.navbar a.active::after, .navbar a:hover::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;  /* centrerar elementet */
+  transform: translateX(-50%);  /* ytterligare centrering */
+  width: 60%; /* ändrat till en mindre bredd */
+  border-bottom: 2px solid black;
+}
+
+.navbar a.active::after,
+.navbar a:hover::after {
+  width: 80%;  /* Bredden på understrykningen när a är aktiv eller hover */
+}
+
+
+.btn-theme i {
+  margin-left: 10px;
+}

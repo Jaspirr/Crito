@@ -1,0 +1,94 @@
+.btn-theme {
+    background-color: #F9D783;
+    color: black;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 50px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+  }
+.btn-theme-border {
+    background-color: #F9D783;
+    color: black;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 50px;
+    border: 1px solid black;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+  }
+.btn-theme-white{
+    background-color: none;
+    border: 1px solid black;
+    color: black;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 50px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+}
+.btn-theme-wide {
+    background-color: #F9D783;
+    color: black;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 50px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn-theme-black {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 50px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn-theme-play {
+    background-color: transparent;
+    border: 0.5px solid black;
+    color: black;
+    padding: 10px 20px;
+    max-width: 20px;
+    margin: 10px;
+    border-radius: 100%;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+}
+.round-btn {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    width: 40px;
+    height: 40px;
+    background-color: black; /* Färgen ändrad till svart */
+    transition: background-color 0.3s;  /* Ändra färg under 0.3 sekunder */
+    transition-delay: 0s;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    color: white; /* Textfärgen ändrad till vit så den syns mot den svarta bakgrunden */
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+/* Hover-effekt */
+.round-btn:hover {
+    background-color: white;  /* Exempel på en ny färg när du hovrar */
+    color: black; /* Exempel på textfärg när du hovrar */
+}

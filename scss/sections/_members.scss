@@ -1,0 +1,90 @@
+.members-section {
+    background-color: #F0D082;
+    color: black;
+    text-align: center;
+    padding: 20px;
+    padding-top: 100px;
+  }
+  .members-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+  }
+  
+  .header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .title-wrapper {
+    text-align: left;
+  }
+  
+  .members-section h1, .members-section h3 {
+    margin: 10px;
+  }
+  
+  .member-content-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 40px;
+    gap: 10px;
+  }
+  
+  .member-card {
+    margin: 10px;
+    text-align: start;
+  }
+  
+  .member-card img {
+    width: 200px;  /* eller den bredd du föredrar */
+    height: 300px;  /* eller den höjd du föredrar */
+    object-fit: cover;
+  }
+  
+  .member-card-h4 {
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+  
+  .member-card-p {
+    font-size: 14px;
+    font-weight: 300;
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+  .member-card.zoomed {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .dot-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+  }
+  
+  .dot {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(128, 128, 128, 0.6); 
+    margin: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    opacity: 0.8;  /* Gör punkten delvis genomskinlig */
+    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.1);  /* Lägg till skugga */
+  }
+  
+  .dot.active {
+    background-color: black;
+  }
+  
+ 

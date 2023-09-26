@@ -1,0 +1,37 @@
+
+.showcase {
+  display: flex;
+  align-items: center; /* Detta centreras det vertikalt */
+  padding: 50px 0;
+  background-color: #F0EFE9;
+}
+
+.showcase-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+  .text-content {
+    flex: 1;
+  }
+  
+  .text-content h1 {
+    font-size: 96px;
+    margin-bottom: 20px;
+  }
+  
+  .text-content p {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  
+  
+  .image-content {
+    flex: 1;
+    justify-content: center;
+  }
+  
+  .image-content img {
+    max-width: 100%;
+    height: auto;
+  }
