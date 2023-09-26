@@ -34,6 +34,25 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   document.addEventListener('DOMContentLoaded', function() {
+    let dots = document.querySelectorAll('.dot');
+    let articles = document.querySelectorAll('.article');
+
+    dots.forEach(dot => {
+        dot.addEventListener('click', function() {
+            let dotNumber = this.getAttribute('data-dot');
+
+            articles.forEach(article => {
+                if (article.getAttribute('data-article') === dotNumber) {
+                    article.style.display = 'block';
+                } else {
+                    article.style.display = 'none';
+                }
+            });
+        });
+    });
+});
+
+  document.addEventListener('DOMContentLoaded', function() {
     const leftArrow = document.querySelector('.pagination .page-arrow i.fa-chevron-left:not(.fa-rotate-180)');
     const rightArrow = document.querySelector('.pagination .page-arrow i.fa-rotate-180');
     const pageNumbers = document.querySelectorAll('.pagination .page-number, .pagination .page-number-active');
